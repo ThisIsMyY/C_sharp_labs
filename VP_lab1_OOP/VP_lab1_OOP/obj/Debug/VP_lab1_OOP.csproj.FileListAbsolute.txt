@@ -1,0 +1,8 @@
+E:\C#\VP_lab1_OOP\VP_lab1_OOP\bin\Debug\VP_lab1_OOP.exe.config
+E:\C#\VP_lab1_OOP\VP_lab1_OOP\bin\Debug\VP_lab1_OOP.exe
+E:\C#\VP_lab1_OOP\VP_lab1_OOP\bin\Debug\VP_lab1_OOP.pdb
+E:\C#\VP_lab1_OOP\VP_lab1_OOP\obj\Debug\VP_lab1_OOP.csproj.AssemblyReference.cache
+E:\C#\VP_lab1_OOP\VP_lab1_OOP\obj\Debug\VP_lab1_OOP.csproj.SuggestedBindingRedirects.cache
+E:\C#\VP_lab1_OOP\VP_lab1_OOP\obj\Debug\VP_lab1_OOP.csproj.CoreCompileInputs.cache
+E:\C#\VP_lab1_OOP\VP_lab1_OOP\obj\Debug\VP_lab1_OOP.exe
+E:\C#\VP_lab1_OOP\VP_lab1_OOP\obj\Debug\VP_lab1_OOP.pdb

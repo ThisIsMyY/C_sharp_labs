@@ -155,7 +155,7 @@ namespace ThreeSorts
             Console.WriteLine("\n" + string.Join("   ", row1));
             Console.WriteLine(string.Join("   ", row2));
             Console.WriteLine(string.Join("   ", row3));
-            Console.ReadLine();
+            Console.ReadKey();
         }
 
         static void AnimationLinesOutput(string[] row1, string[] row2, string[] row3)

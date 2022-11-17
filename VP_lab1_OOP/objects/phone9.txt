@@ -1,0 +1,8 @@
+Name: Unknown
+Model: Unknown
+Display: Unknown
+Processor: Unknown
+Memory: Unknown
+Price: Unknown
+Company name: Unknown
+Company address: Unknown

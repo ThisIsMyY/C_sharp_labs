@@ -1,0 +1,8 @@
+E:\C#\GA_lab1\GA_lab1\bin\Debug\GA_lab1.exe.config
+E:\C#\GA_lab1\GA_lab1\bin\Debug\GA_lab1.exe
+E:\C#\GA_lab1\GA_lab1\bin\Debug\GA_lab1.pdb
+E:\C#\GA_lab1\GA_lab1\obj\Debug\GA_lab1.csproj.AssemblyReference.cache
+E:\C#\GA_lab1\GA_lab1\obj\Debug\GA_lab1.csproj.SuggestedBindingRedirects.cache
+E:\C#\GA_lab1\GA_lab1\obj\Debug\GA_lab1.csproj.CoreCompileInputs.cache
+E:\C#\GA_lab1\GA_lab1\obj\Debug\GA_lab1.exe
+E:\C#\GA_lab1\GA_lab1\obj\Debug\GA_lab1.pdb

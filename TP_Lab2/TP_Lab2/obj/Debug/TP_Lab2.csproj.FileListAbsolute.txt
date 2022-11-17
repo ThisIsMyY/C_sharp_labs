@@ -1,0 +1,8 @@
+E:\C#\TP_Lab2\TP_Lab2\bin\Debug\TP_Lab2.exe.config
+E:\C#\TP_Lab2\TP_Lab2\bin\Debug\TP_Lab2.exe
+E:\C#\TP_Lab2\TP_Lab2\bin\Debug\TP_Lab2.pdb
+E:\C#\TP_Lab2\TP_Lab2\obj\Debug\TP_Lab2.csproj.AssemblyReference.cache
+E:\C#\TP_Lab2\TP_Lab2\obj\Debug\TP_Lab2.csproj.SuggestedBindingRedirects.cache
+E:\C#\TP_Lab2\TP_Lab2\obj\Debug\TP_Lab2.csproj.CoreCompileInputs.cache
+E:\C#\TP_Lab2\TP_Lab2\obj\Debug\TP_Lab2.exe
+E:\C#\TP_Lab2\TP_Lab2\obj\Debug\TP_Lab2.pdb

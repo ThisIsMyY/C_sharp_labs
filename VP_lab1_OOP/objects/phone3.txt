@@ -1,0 +1,8 @@
+Name: Jesus 3.0
+Model: Galaxy
+Display: 3.5
+Processor: Tor
+Memory: 64
+Price: 2000
+Company name: The Rock
+Company address: 20th Century Fox str. 31/35
