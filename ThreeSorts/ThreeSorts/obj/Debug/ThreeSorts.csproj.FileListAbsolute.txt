@@ -6,3 +6,11 @@ E:\C#\ThreeSorts\ThreeSorts\obj\Debug\ThreeSorts.csproj.SuggestedBindingRedirect
 E:\C#\ThreeSorts\ThreeSorts\obj\Debug\ThreeSorts.csproj.CoreCompileInputs.cache
 E:\C#\ThreeSorts\ThreeSorts\obj\Debug\ThreeSorts.exe
 E:\C#\ThreeSorts\ThreeSorts\obj\Debug\ThreeSorts.pdb
+E:\C_sharp_labs\ThreeSorts\ThreeSorts\bin\Debug\ThreeSorts.exe.config
+E:\C_sharp_labs\ThreeSorts\ThreeSorts\bin\Debug\ThreeSorts.exe
+E:\C_sharp_labs\ThreeSorts\ThreeSorts\bin\Debug\ThreeSorts.pdb
+E:\C_sharp_labs\ThreeSorts\ThreeSorts\obj\Debug\ThreeSorts.csproj.AssemblyReference.cache
+E:\C_sharp_labs\ThreeSorts\ThreeSorts\obj\Debug\ThreeSorts.csproj.SuggestedBindingRedirects.cache
+E:\C_sharp_labs\ThreeSorts\ThreeSorts\obj\Debug\ThreeSorts.csproj.CoreCompileInputs.cache
+E:\C_sharp_labs\ThreeSorts\ThreeSorts\obj\Debug\ThreeSorts.exe
+E:\C_sharp_labs\ThreeSorts\ThreeSorts\obj\Debug\ThreeSorts.pdb

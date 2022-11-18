@@ -148,20 +148,20 @@ namespace ThreeSorts
             row1 = new string[array.Length];
             row2 = new string[array.Length];
             row3 = new string[array.Length];
+            int timeDelay;
 
             DefaultArgsForAnimationLines(array, ref row1, ref row2, ref row3);
 
             Console.Clear();
             Console.WriteLine("\n" + string.Join("   ", row1));
-            Console.WriteLine(string.Join("   ", row2));
+            Console.WriteLine(string.Join("   ", row2) + "           ");
             Console.WriteLine(string.Join("   ", row3));
-            Console.ReadKey();
         }
 
         static void AnimationLinesOutput(string[] row1, string[] row2, string[] row3)
         {
             Console.WriteLine("\n" + string.Join("   ", row1));
-            Console.WriteLine(string.Join("   ", row2));
+            Console.WriteLine(string.Join("   ", row2) + "           ");
             Console.WriteLine(string.Join("   ", row3));
         }
         
@@ -180,13 +180,22 @@ namespace ThreeSorts
             string[] row1;
             string[] row2;
             string[] row3;
+
+            Console.Clear();
+            Console.Write("Введите задержку в мс: ");
+            int timeDelay = int.Parse(Console.ReadLine());
+
             AnimationSettings(array, out row1, out row2, out row3);
+            Console.WriteLine("\n\n---P R E S S   E N T E R   F O R   S T A R T--- ");
+            Console.ReadKey();
 
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array.Length; j++)
                 {
-                    Console.Clear();
+                    bool needToSwap = false;
+
+                    Console.SetCursorPosition(0, 0);
                     DefaultArgsForAnimationLines(array, ref row1, ref row2, ref row3);
 
                     row1[i] = array[i].ToString();
@@ -194,10 +203,67 @@ namespace ThreeSorts
                     row2[j] = "   ";
                     row3[j] = array[j].ToString();
 
-                    AnimationLinesOutput(row1, row2, row3);
-                    Console.ReadLine();
+                    //elements comparison
+                    if(array[j] > array[i])
+                    {
+                        needToSwap = true;
+                    }
 
-                    if (array[j] > array[i])
+                    //strings output
+                    Console.WriteLine("\n");
+                    for (int c = 0; c < array.Length; c++)
+                    {
+                        if (c == i)
+                        {
+                            if (needToSwap)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write(row1[c] + "   ");
+                                Console.ResetColor();
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write(row1[c] + "   ");
+                                Console.ResetColor();
+                            }
+                        }
+                        else
+                        {
+                            Console.Write(row1[c] + "   ");
+                        }
+                    }
+                    Console.WriteLine();
+
+                    Console.WriteLine(string.Join("   ", row2) + "           ");
+
+                    for (int c = 0; c < array.Length; c++)
+                    {
+                        if (c == j)
+                        {
+                            if (needToSwap)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write(row3[c] + "   ");
+                                Console.ResetColor();
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write(row3[c] + "   ");
+                                Console.ResetColor();
+                            }
+                        }
+                        else
+                        {
+                            Console.Write(row3[c] + "   ");
+                        }
+                    }
+                    Console.WriteLine();
+
+                    System.Threading.Thread.Sleep(timeDelay);
+
+                    if (needToSwap)
                     {
                         Swap(ref array[j], ref array[i]);
                     }
@@ -217,24 +283,90 @@ namespace ThreeSorts
             string[] row1;
             string[] row2;
             string[] row3;
+
+            Console.Clear();
+            Console.Write("Введите задержку в мс: ");
+            int timeDelay = int.Parse(Console.ReadLine());
+
             AnimationSettings(array, out row1, out row2, out row3);
+            Console.WriteLine("\n\n---P R E S S   E N T E R   F O R   S T A R T--- ");
+            Console.ReadKey();
 
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array.Length - 1 - i; j++)
                 {
-                    Console.Clear();
+                    bool needToSwap = false;
+
+                    Console.SetCursorPosition(0, 0);
                     DefaultArgsForAnimationLines(array, ref row1, ref row2, ref row3);
+
+                    //elements comparison
+                    if (array[j] > array[j + 1])
+                    {
+                        needToSwap = true;
+                    }
 
                     row1[j] = array[j].ToString();
                     row2[j] = "   ";
                     row2[j + 1] = "   ";
                     row3[j + 1] = array[j + 1].ToString();
 
-                    AnimationLinesOutput(row1, row2, row3);
-                    Console.ReadLine();
+                    //strings output
+                    Console.WriteLine("\n");
+                    for (int c = 0; c < array.Length; c++)
+                    {
+                        if (c == j)
+                        {
+                            if (needToSwap)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write(row1[c] + "   ");
+                                Console.ResetColor();
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write(row1[c] + "   ");
+                                Console.ResetColor();
+                            }
+                        }
+                        else
+                        {
+                            Console.Write(row1[c] + "   ");
+                        }
+                    }
+                    Console.WriteLine();
 
-                    if (array[j] > array[j + 1])
+                    Console.WriteLine(string.Join("   ", row2) + "           ");
+
+                    for (int c = 0; c < array.Length; c++)
+                    {
+                        if (c == j + 1)
+                        {
+                            if (needToSwap)
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.Write(row3[c] + "   ");
+                                Console.ResetColor();
+                            }
+                            else
+                            {
+                                Console.ForegroundColor = ConsoleColor.Red;
+                                Console.Write(row3[c] + "   ");
+                                Console.ResetColor();
+                            }
+                        }
+                        else
+                        {
+                            Console.Write(row3[c] + "   ");
+                        }
+                    }
+                    Console.WriteLine();
+
+                    System.Threading.Thread.Sleep(timeDelay);
+
+                    if (needToSwap)
                     {
                         Swap(ref array[j], ref array[j + 1]);
                     }
@@ -257,16 +389,27 @@ namespace ThreeSorts
             string[] row1;
             string[] row2;
             string[] row3;
+            bool needToSwap = false;
+
+            Console.Clear();
+            Console.Write("Введите задержку в мс: ");
+            int timeDelay = int.Parse(Console.ReadLine());
+
             AnimationSettings(array, out row1, out row2, out row3);
+
+            //waiting for user
+            Console.WriteLine("\n\n---P R E S S   E N T E R   F O R   S T A R T--- ");
+            Console.ReadLine();
 
             for (int i = 0; i < array.Length; i++)
             {
                 index = i;
                 currentElem = array[i];
 
+                //swap is not need
                 if(index > 0 && currentElem >= array[index - 1])
                 {
-                    Console.Clear();
+                    Console.SetCursorPosition(0, 0);
                     DefaultArgsForAnimationLines(array, ref row1, ref row2, ref row3);
 
                     row1[i] = array[i].ToString();
@@ -274,16 +417,50 @@ namespace ThreeSorts
                     row2[index-1] = "   ";
                     row3[index-1] = array[index-1].ToString();
 
-                    AnimationLinesOutput(row1, row2, row3);
-                    Console.ReadLine();
+                    //strings output
+                    Console.WriteLine("\n");
+                    for (int c = 0; c < array.Length; c++)
+                    {
+                        if (c == i)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(row1[c] + "   ");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.Write(row1[c] + "   ");
+                        }
+                    }
+                    Console.WriteLine();
+
+                    Console.WriteLine(string.Join("   ", row2) + "           ");
+
+                    for (int c = 0; c < array.Length; c++)
+                    {
+                        if (c == index - 1)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.Write(row3[c] + "   ");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.Write(row3[c] + "   ");
+                        }
+                    }
+                    Console.WriteLine();
+
+                    System.Threading.Thread.Sleep(timeDelay);
                 }
 
+                //swap is needed
                 while (index > 0 && currentElem < array[index - 1])
                 {
                     array[index] = array[index - 1];
                     index--;
 
-                    Console.Clear();
+                    Console.SetCursorPosition(0, 0);
                     DefaultArgsForAnimationLines(array, ref row1, ref row2, ref row3);
 
                     row1[i] = array[i].ToString();
@@ -291,8 +468,41 @@ namespace ThreeSorts
                     row2[index] = "   ";
                     row3[index] = array[index].ToString();
 
-                    AnimationLinesOutput(row1, row2, row3);
-                    Console.ReadLine();
+                    //strings output
+                    Console.WriteLine("\n");
+                    for (int c = 0; c < array.Length; c++)
+                    {
+                        if (c == i)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write(row1[c] + "   ");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.Write(row1[c] + "   ");
+                        }
+                    }
+                    Console.WriteLine();
+
+                    Console.WriteLine(string.Join("   ", row2) + "           ");
+
+                    for (int c = 0; c < array.Length; c++)
+                    {
+                        if (c == index)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.Write(row3[c] + "   ");
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.Write(row3[c] + "   ");
+                        }
+                    }
+                    Console.WriteLine();
+
+                    System.Threading.Thread.Sleep(timeDelay);
                 }
                 array[index] = currentElem;
             }
@@ -305,11 +515,26 @@ namespace ThreeSorts
             return array;
         }
 
-        static int FindPivotIndexAnimated(int[] array, int minIndex, int maxIndex)//-5 8 0 4 3 1 7; -5 0 4 3 1; -5 0
+        static void AnimatedQuickSortLaunch(int[] numArray)
+        {
+            Console.Clear();
+            Console.Write("Введите задержку в мс: ");
+            int timeDelay = int.Parse(Console.ReadLine());
+
+            //waiting for user
+            Console.Clear();
+            Console.WriteLine("\n\n---P R E S S   E N T E R   F O R   S T A R T--- ");
+            Console.ReadLine();
+
+            QuickSortAnimated(numArray, 0, numArray.Length - 1, timeDelay);
+        }
+
+        static int FindPivotIndexAnimated(int[] array, int minIndex, int maxIndex, int timeDelay)//-5 8 0 4 3 1 7; -5 0 4 3 1; -5 0
         {
             string[] row1;
             string[] row2;
             string[] row3;
+
             AnimationSettings(array, out row1, out row2, out row3);
 
             int lastElem = array[maxIndex];
@@ -320,7 +545,7 @@ namespace ThreeSorts
                 {
                     pivotIndex++;//4; 1; 0
 
-                    Console.Clear();
+                    Console.SetCursorPosition(0, 0);
                     DefaultArgsForAnimationLines(array, ref row1, ref row2, ref row3);
 
                     row1[maxIndex] = array[maxIndex].ToString();
@@ -329,11 +554,11 @@ namespace ThreeSorts
                     row3[i] = array[i].ToString();
 
                     AnimationLinesOutput(row1, row2, row3);
-                    Console.ReadLine();
+                    System.Threading.Thread.Sleep(timeDelay);
 
                     Swap(ref array[i], ref array[pivotIndex]);
 
-                    Console.Clear();
+                    Console.SetCursorPosition(0, 0);
                     DefaultArgsForAnimationLines(array, ref row1, ref row2, ref row3);
 
                     row1[maxIndex] = array[maxIndex].ToString();
@@ -342,11 +567,11 @@ namespace ThreeSorts
                     row3[i] = "   ";
 
                     AnimationLinesOutput(row1, row2, row3);
-                    Console.ReadLine();
+                    System.Threading.Thread.Sleep(timeDelay);
                 }
                 else
                 {
-                    Console.Clear();
+                    Console.SetCursorPosition(0, 0);
                     DefaultArgsForAnimationLines(array, ref row1, ref row2, ref row3);
 
                     row1[maxIndex] = array[maxIndex].ToString();
@@ -355,9 +580,9 @@ namespace ThreeSorts
                     row3[i] = array[i].ToString();
 
                     AnimationLinesOutput(row1, row2, row3);
-                    Console.ReadLine();
+                    System.Threading.Thread.Sleep(timeDelay);
 
-                    Console.Clear();
+                    Console.SetCursorPosition(0, 0);
                     DefaultArgsForAnimationLines(array, ref row1, ref row2, ref row3);
 
                     row1[maxIndex] = array[maxIndex].ToString();
@@ -366,16 +591,16 @@ namespace ThreeSorts
                     row3[i] = "   ";
 
                     AnimationLinesOutput(row1, row2, row3);
-                    Console.ReadLine();
+                    System.Threading.Thread.Sleep(timeDelay);
                 }
             } //-5 0 4 3 1 8 7; -5 0 3 4 1; -5 0
             pivotIndex++;//5; 2; 1
             Swap(ref array[maxIndex], ref array[pivotIndex]);
 
-            Console.Clear();
+            Console.SetCursorPosition(0, 0);
             DefaultArgsForAnimationLines(array, ref row1, ref row2, ref row3);
             AnimationLinesOutput(row1, row2, row3);
-            Console.ReadLine();
+            System.Threading.Thread.Sleep(timeDelay);
 
             // -5 0 4 3 1 7 8; -5 0 1 3 4; -5 0
             // pivot = 5; pivot = 2; pivot = 0
@@ -383,16 +608,16 @@ namespace ThreeSorts
             return pivotIndex;
         }
 
-        static int[] QuickSortAnimated(int[] array, int minIndex, int maxIndex)
+        static int[] QuickSortAnimated(int[] array, int minIndex, int maxIndex, int timeDelay)
         {
             if (minIndex >= maxIndex)
             {
                 return array; // -5 0 1 3 4 7 8
             }
 
-            int pivotIndex = FindPivotIndexAnimated(array, minIndex, maxIndex);
-            QuickSortAnimated(array, minIndex, pivotIndex - 1); // -5 0 4 3 1 - снова ищем pivot; -5 0
-            QuickSortAnimated(array, pivotIndex + 1, maxIndex); // 8 - сработает return array, так как minIndex = maxIndex;
+            int pivotIndex = FindPivotIndexAnimated(array, minIndex, maxIndex, timeDelay);
+            QuickSortAnimated(array, minIndex, pivotIndex - 1, timeDelay); // -5 0 4 3 1 - снова ищем pivot; -5 0
+            QuickSortAnimated(array, pivotIndex + 1, maxIndex, timeDelay); // 8 - сработает return array, так как minIndex = maxIndex;
 
             return array;
         }
@@ -649,7 +874,7 @@ namespace ThreeSorts
                                                     isSorted = true;
                                                     break;
                                                 case 4:
-                                                    QuickSortAnimated(numArray, 0, numArray.Length - 1);
+                                                    AnimatedQuickSortLaunch(numArray);
                                                     isSorted = true;
                                                     break;
                                                 default:
@@ -667,7 +892,7 @@ namespace ThreeSorts
                                     }
                                 }
                             }
-                            Searches(ref numArray, ref searchType, ref searchNumber, ref searchNumberIndex);
+                            //Searches(ref numArray, ref searchType, ref searchNumber, ref searchNumberIndex);
                         }
                         else if (mainMenuValue == 2)
                         {
@@ -717,7 +942,7 @@ namespace ThreeSorts
                                     }
                                 }
                             }
-                            Searches(ref numArray, ref searchType, ref searchNumber, ref searchNumberIndex);
+                            //Searches(ref numArray, ref searchType, ref searchNumber, ref searchNumberIndex);
                         }
                         else if (mainMenuValue == 3)
                         {
