@@ -17,7 +17,7 @@ namespace TP_Lab2
         }
         static void ShowNumberOfSubjects(int subjectsNumber)
         {
-            Console.WriteLine("The group has " + subjectsNumber + " students");
+            Console.WriteLine("The group has " + subjectsNumber + " subjects");
         }
         static void ShowStudentGrades(int student_id, int studentsNumber, int subjectsNumber, string[] subjects, int[,,] notes)
         {

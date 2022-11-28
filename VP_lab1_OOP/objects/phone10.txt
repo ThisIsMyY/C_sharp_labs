@@ -1,0 +1,8 @@
+Name: Kwantor
+Model: Gram
+Display: 5.5
+Processor: Exenos
+Memory: 4
+Price: 8000
+Company name: Roots
+Company address: Germany-USSR 1945 str. unit 2

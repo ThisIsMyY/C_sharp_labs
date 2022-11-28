@@ -1,0 +1,8 @@
+Name: Kwantor
+Model: Gram
+Display: 4.5
+Processor: Aboba
+Memory: 16
+Price: 12000
+Company name: Roots
+Company address: St.Kwantor str. 19

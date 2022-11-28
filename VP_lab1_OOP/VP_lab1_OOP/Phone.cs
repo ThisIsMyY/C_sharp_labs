@@ -2,6 +2,7 @@
 
 namespace VP_lab1_OOP
 {
+    //enum Processor {"a", "b", "c", "d"}
     internal class Phone : Company
     {
         string name;
@@ -10,6 +11,17 @@ namespace VP_lab1_OOP
         string processor;
         string memory;
         string price;
+
+        /*string model;
+        double display;
+        bool inStock;
+        int price;
+        byte memory;
+        DateTime date;
+        Processor processor;
+        Company company;*/
+
+
 
         public string Name { 
             get { return name; } 
