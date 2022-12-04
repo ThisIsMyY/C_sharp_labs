@@ -17,17 +17,17 @@ namespace TP_Lab2
         }
         static void ShowNumberOfSubjects(int subjectsNumber)
         {
-            Console.WriteLine("The group has " + subjectsNumber + " students");
+            Console.WriteLine("The group has " + subjectsNumber + " subjects");
         }
-        static void ShowStudentGrades(int student_id, int studentsNumber, int subjectsNumber, string[] subjects, int[,,] notes)
+        static void ShowStudentGrades(int student_id, int subjectsNumber, string[] subjects, int[,,] notes, int notesNumber)
         {
-            for (int i = 0; i < studentsNumber; i++)
+            for (int subject = 0; subject < subjectsNumber; subject++)
             {
                 Console.WriteLine();
-                Console.Write(subjects[i] + ":  ");
-                for (int j = 0; j < subjectsNumber; j++)
+                Console.Write(subjects[subject] + ":  ");
+                for (int note = 0; note < notesNumber; note++)
                 {
-                    Console.Write(notes[0, i, j] + "  ");
+                    Console.Write(notes[student_id, subject, note] + "  ");
                 }
             }
         }
@@ -35,6 +35,52 @@ namespace TP_Lab2
         {
             int totalNotesNumber = notes.Length;
             Console.WriteLine("Total number of grades: " + totalNotesNumber);
+        }
+        static void StudentWithTheHighestScore(string[] students, string[] subjects, int[,,] notes, int notesNumber)
+        {
+            int maxScore = 0;
+            int studentIndex = 0;
+            for(int student = 0; student < students.Length; student++)
+            {
+                int score = 0;
+                for(int subject = 0; subject < subjects.Length; subject++)
+                {
+                    for(int note = 0; note < notesNumber; note++)
+                    {
+                        score += notes[student,subject,note];
+                    }
+                }
+                if(score > maxScore)
+                {
+                    maxScore = score;
+                    studentIndex = student;
+                }
+            }
+            Console.WriteLine("Student with the highest score is: " + students[studentIndex] + $"[{studentIndex}]");
+            Console.WriteLine("Score is " + maxScore);
+        }
+        static void StudentWithTheLowestScore(string[] students, string[] subjects, int[,,] notes, int notesNumber)
+        {
+            int minScore = 99999999;
+            int studentIndex = 0;
+            for (int student = 0; student < students.Length; student++)
+            {
+                int score = 0;
+                for (int subject = 0; subject < subjects.Length; subject++)
+                {
+                    for (int note = 0; note < notesNumber; note++)
+                    {
+                        score += notes[student, subject, note];
+                    }
+                }
+                if (score < minScore)
+                {
+                    minScore = score;
+                    studentIndex = student;
+                }
+            }
+            Console.WriteLine("Student with the lowest score is: " + students[studentIndex] + $"[{studentIndex}]");
+            Console.WriteLine("Score is " + minScore);
         }
         static void AmountOfEachGrade(int[,,] notes, int studentsNumber, int subjectsNumber, int notesNumber, Random random)
         {
@@ -135,7 +181,8 @@ namespace TP_Lab2
 
             while(true)
             {
-                Console.WriteLine("\n1. Show number of students. 2. Show number of subjects. 3. Show student grades. 4.Total grades number. 5. Amount of each grade.");
+                Console.WriteLine("\n1. Show number of students. 2. Show number of subjects. 3. Show student grades. " +
+                    "4. Student with the highest score. 5. Student with the lowest score. 6.Total grades number. 7. Amount of each grade.");
                 Console.Write("Select menu element: ");
                 string menuElem = Console.ReadLine();
                 switch (menuElem)
@@ -155,14 +202,19 @@ namespace TP_Lab2
                         }
                         Console.Write("\n\nEnter student number: ");
                         int student_id = int.Parse(Console.ReadLine());
-                        ShowStudentGrades(student_id, studentsNumber, subjectsNumber, subjects, notes);
+                        ShowStudentGrades(student_id, subjectsNumber, subjects, notes, notesNumber);
                         break;
-
                     case "4":
+                        StudentWithTheHighestScore(students, subjects, notes, notesNumber);
+                        break;
+                    case "5":
+                        StudentWithTheLowestScore(students, subjects, notes, notesNumber); ;
+                        break;
+                    case "6":
                         TotalGradesNumber(notes);
                         break;
 
-                    case "5":
+                    case "7":
                         AmountOfEachGrade(notes, studentsNumber, subjectsNumber, notesNumber, random);
                         break;
 
@@ -170,7 +222,7 @@ namespace TP_Lab2
                         Console.WriteLine("Wrong value!");
                         break;
                 }
-                Console.WriteLine("\n\nType \"exit\" for finish the program or just press any key...");
+                Console.WriteLine("\n\nType \"exit\" for finish the program or just press any key for continue");
                 if(Console.ReadLine() == "exit")
                 {
                     break;
