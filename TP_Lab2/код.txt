@@ -7,7 +7,7 @@
 */
 using System;
 
-namespace TP_Lab2
+namespace TP_Lab2_b
 {
     internal class Program
     {
@@ -181,8 +181,8 @@ namespace TP_Lab2
 
             while(true)
             {
-                Console.WriteLine("\n1. Show number of students. 2. Show number of subjects. 3. Show student grades. " +
-                    "4. Student with the highest score. 5. Student with the lowest score. 6.Total grades number. 7. Amount of each grade.");
+                Console.WriteLine("\n1. Show number of students. \n2. Show number of subjects. \n3. Show student grades. " +
+                    "\n4. Student with the highest score. \n5. Student with the lowest score. \n6.Total grades number. \n7. Amount of each grade.");
                 Console.Write("Select menu element: ");
                 string menuElem = Console.ReadLine();
                 switch (menuElem)

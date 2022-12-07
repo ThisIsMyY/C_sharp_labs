@@ -22,16 +22,16 @@ namespace TP_lab3
 
             //funtion-indexator
             Console.WriteLine("\n\n\nFuntion-indexer:\n----------------------");
-            Console.WriteLine("{0}[1]: {1}", string2, string2.Result[1]);
+            Console.WriteLine("{0}[1]: {1}", string2.Result, string2.Result[1]);
 
             //get length
             Console.WriteLine("\n\n\nGet string length:\n----------------------");
-            Console.WriteLine("string length of {0}: {1}", string1, string1.Length);
+            Console.WriteLine("string length of {0}: {1}", string1.Result, string1.Length);
 
-            string1.Result = string2.Result + string3.Result;
-            Console.WriteLine("\n\n\nAddition operator:\n----------------------");
-            Console.WriteLine("{0} + {1} = {2}", string1, string2, string1.Result);
-
+            //operator +
+            mystring newString = string1 + string4;
+            Console.WriteLine("\n\n\nOperator + :\n----------------------");
+            Console.WriteLine("{0} + {1} = {2}", string1.Result, string4.Result, newString.Result);
 
             //1)Join
             string[] stringArray = { "string1", "string2", "string3", "string4", "string5", "string6"};
@@ -52,21 +52,21 @@ namespace TP_lab3
 
             //3)Spaces counter
             Console.WriteLine("\n\n\nSpacesCounter():\n----------------------");
-            Console.WriteLine("count of spaces in {0}: {1} ", string4, string4.SpacesCounter());
+            Console.WriteLine("count of spaces in {0}: {1} ", string4.Result, string4.SpacesCounter());
 
 
 
             //4)Equals
             Console.WriteLine("\n\n\nEquals():\n----------------------");
-            Console.WriteLine("\nis {0} equal to \"abcdefghij\"? ", string3, string3.Equals("abcdefghij"));
-            Console.WriteLine("\nis {0} equal to \"bcdefgh\"? ", string3, string3.Equals("bcdefgh"));
+            Console.WriteLine("\nis {0} equal to \"abcdefghij\"? ", string3.Result, string3.Equals("abcdefghij"));
+            Console.WriteLine("\nis {0} equal to \"bcdefgh\"? ", string3.Result, string3.Equals("bcdefgh"));
             Console.WriteLine("\nare two string equals? " + MyString.Equals("string1", "string2"));
 
 
 
             //5)Contains
             Console.WriteLine("\n\n\nContains():\n----------------------");
-            Console.WriteLine("is string {0} contains {1}? ", string4, string4.Contains("hello world"));
+            Console.WriteLine("is string {0} contains {1}? ", string4.Result, string4.Contains("hello world"));
 
 
 
@@ -84,22 +84,22 @@ namespace TP_lab3
             Console.WriteLine("\n\n\nIndexOf():\n----------------------");
             if (string4.IndexOf("See") != -1)
             {
-                Console.WriteLine("first occurance of substring in string " + string4 + " has index: " + string4.IndexOf("See"));
+                Console.WriteLine("first occurance of substring in string " + string4.Result + " has index: " + string4.IndexOf("See"));
             }
             else
             {
-                Console.WriteLine("string " + string4 + "has not substring \"See\"");
+                Console.WriteLine("string " + string4.Result + "has not substring \"See\"");
             }
 
             //9)LastIndexOf
             Console.WriteLine("\n\n\nLastIndexOf():\n----------------------");
             if (string4.LastIndexOf("See ya") != -1)
             {
-                Console.WriteLine("last occurance of substring in string "+ string4 +" has index: " + string4.LastIndexOf("See"));
+                Console.WriteLine("last occurance of substring in string "+ string4.Result + " has index: " + string4.LastIndexOf("See"));
             }
             else
             {
-                Console.WriteLine("string " + string4 + "has not substring \"See ya\"");
+                Console.WriteLine("string " + string4.Result + "has not substring \"See ya\"");
             }
 
 

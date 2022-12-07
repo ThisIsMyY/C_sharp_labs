@@ -56,6 +56,14 @@ namespace TP_lab3
                 length++;
             }
         }
+
+        //operators
+
+        public static MyString operator +(MyString str1, MyString str2)
+        {
+            return new MyString(str1.result, str2.result);
+        }
+
         //methods
 
         //string joining
