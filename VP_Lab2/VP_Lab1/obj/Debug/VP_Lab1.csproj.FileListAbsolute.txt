@@ -15,10 +15,11 @@ E:\C_sharp_labs\VP_Lab1\VP_Lab1\bin\Debug\VP_Lab1.exe
 E:\C_sharp_labs\VP_Lab1\VP_Lab1\bin\Debug\VP_Lab1.pdb
 E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.csproj.AssemblyReference.cache
 E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.csproj.SuggestedBindingRedirects.cache
+E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.SecondWindow.resources
+E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.FirstWindow.resources
 E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.Properties.Resources.resources
 E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.csproj.GenerateResource.cache
 E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.csproj.CoreCompileInputs.cache
 E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.exe
 E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.pdb
 E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.ModelsCreator.resources
-E:\C_sharp_labs\VP_Lab1\VP_Lab1\obj\Debug\VP_Lab1.ModelsView.resources

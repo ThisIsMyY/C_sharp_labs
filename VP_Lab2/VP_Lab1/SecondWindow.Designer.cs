@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,25 +46,9 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.DeliverySelect = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel10.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(711, 13);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(16, 596);
-            this.vScrollBar1.TabIndex = 10;
-            // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(9, 618);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(687, 17);
-            this.hScrollBar1.TabIndex = 11;
             // 
             // panel13
             // 
@@ -106,7 +88,6 @@
             this.label11.Size = new System.Drawing.Size(58, 24);
             this.label11.TabIndex = 6;
             this.label11.Text = "Price:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label10
             // 
@@ -252,33 +233,17 @@
             this.label13.TabIndex = 20;
             this.label13.Text = "Select paymant type:";
             // 
-            // linkLabel1
+            // button1
             // 
-            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Silver;
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Green;
-            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.LinkColor = System.Drawing.SystemColors.ControlLightLight;
-            this.linkLabel1.Location = new System.Drawing.Point(1, 2);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(290, 31);
-            this.linkLabel1.TabIndex = 22;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "ПЕРЕЙТИ К ОПЛАТЕ";
-            this.linkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(232, 548);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(277, 61);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Confirm order";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Green;
-            this.panel2.Controls.Add(this.linkLabel1);
-            this.panel2.Location = new System.Drawing.Point(228, 553);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(288, 36);
-            this.panel2.TabIndex = 23;
-            // 
-            // Form1
+            // SecondWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -286,7 +251,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(731, 640);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel10);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -302,23 +267,17 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.hScrollBar1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.model_info);
-            this.Name = "Form1";
+            this.Name = "SecondWindow";
             this.Text = "Form1";
             this.panel10.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
@@ -337,8 +296,7 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.ComboBox DeliverySelect;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
     }
 }
 

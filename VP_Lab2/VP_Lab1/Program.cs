@@ -16,7 +16,7 @@ namespace VP_Lab1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ModelsCreator());
+            Application.Run(new FirstWindow());
         }
     }
 }

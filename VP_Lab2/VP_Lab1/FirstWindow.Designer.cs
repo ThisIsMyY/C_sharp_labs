@@ -63,8 +63,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.number_of_item = new System.Windows.Forms.Label();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.panel2.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -92,7 +90,7 @@
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.panel1);
-            this.panel2.Location = new System.Drawing.Point(13, 11);
+            this.panel2.Location = new System.Drawing.Point(23, 19);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(255, 224);
             this.panel2.TabIndex = 2;
@@ -117,7 +115,7 @@
             this.radioButton5.Location = new System.Drawing.Point(12, 135);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(96, 28);
-            this.radioButton5.TabIndex = 4;
+            this.radioButton5.TabIndex = 5;
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "model 5";
             this.radioButton5.UseVisualStyleBackColor = true;
@@ -129,7 +127,7 @@
             this.radioButton4.Location = new System.Drawing.Point(12, 101);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(96, 28);
-            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabIndex = 4;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "model 4";
             this.radioButton4.UseVisualStyleBackColor = true;
@@ -141,7 +139,7 @@
             this.radioButton3.Location = new System.Drawing.Point(12, 71);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(96, 28);
-            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabIndex = 3;
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "model 3";
             this.radioButton3.UseVisualStyleBackColor = true;
@@ -153,7 +151,7 @@
             this.radioButton2.Location = new System.Drawing.Point(12, 41);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(96, 28);
-            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabIndex = 2;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "model 2";
             this.radioButton2.UseVisualStyleBackColor = true;
@@ -165,7 +163,7 @@
             this.radioButton1.Location = new System.Drawing.Point(12, 7);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(96, 28);
-            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabIndex = 1;
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "model 1";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -186,11 +184,10 @@
             this.panel3.Controls.Add(this.panel11);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(345, 11);
+            this.panel3.Location = new System.Drawing.Point(355, 19);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(351, 302);
             this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel11
             // 
@@ -311,11 +308,10 @@
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel5.Controls.Add(this.panel9);
             this.panel5.Controls.Add(this.label2);
-            this.panel5.Location = new System.Drawing.Point(16, 260);
+            this.panel5.Location = new System.Drawing.Point(26, 268);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(253, 119);
             this.panel5.TabIndex = 4;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // panel9
             // 
@@ -341,7 +337,6 @@
             this.ColorSelect.Name = "ColorSelect";
             this.ColorSelect.Size = new System.Drawing.Size(209, 33);
             this.ColorSelect.TabIndex = 0;
-            this.ColorSelect.SelectedIndexChanged += new System.EventHandler(this.ColorSelect_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -358,11 +353,10 @@
             this.panel6.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Controls.Add(this.label3);
-            this.panel6.Location = new System.Drawing.Point(16, 403);
+            this.panel6.Location = new System.Drawing.Point(26, 411);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(253, 119);
             this.panel6.TabIndex = 5;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // panel10
             // 
@@ -403,11 +397,10 @@
             this.panel7.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel7.Controls.Add(this.textBox1);
             this.panel7.Controls.Add(this.label5);
-            this.panel7.Location = new System.Drawing.Point(347, 337);
+            this.panel7.Location = new System.Drawing.Point(357, 345);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(348, 184);
             this.panel7.TabIndex = 6;
-            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // textBox1
             // 
@@ -433,7 +426,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(367, 548);
+            this.button1.Location = new System.Drawing.Point(377, 556);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(277, 61);
             this.button1.TabIndex = 7;
@@ -444,7 +437,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown1.Location = new System.Drawing.Point(244, 577);
+            this.numericUpDown1.Location = new System.Drawing.Point(254, 585);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
@@ -463,25 +456,11 @@
             // 
             this.number_of_item.AutoSize = true;
             this.number_of_item.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.number_of_item.Location = new System.Drawing.Point(16, 577);
+            this.number_of_item.Location = new System.Drawing.Point(26, 585);
             this.number_of_item.Name = "number_of_item";
             this.number_of_item.Size = new System.Drawing.Size(222, 26);
             this.number_of_item.TabIndex = 9;
             this.number_of_item.Text = "Enter number of item:";
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(711, 13);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(16, 596);
-            this.vScrollBar1.TabIndex = 10;
-            // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(9, 618);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(687, 17);
-            this.hScrollBar1.TabIndex = 11;
             // 
             // FirstWindow
             // 
@@ -489,8 +468,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(731, 640);
-            this.Controls.Add(this.hScrollBar1);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.number_of_item);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button1);
@@ -539,8 +516,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel9;

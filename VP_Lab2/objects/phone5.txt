@@ -1,0 +1,8 @@
+Name: Galaxy A6
+Model: Nokia
+Display: 4
+Processor: Tor
+Memory: 64
+Price: 6000
+Company name: Xiaomi
+Company address: St.Kwantor str. 19
