@@ -1,8 +1,9 @@
-Name: Jesus 3.0
-Display: 3.5
-Processor: Tor
-Memory: 64
-Price: 2000
-InStoke: Yes
-Company name: The Rock
-DateOfCreating: 02.02.2022
+Name: Alexandria
+Display: 16 inches
+Processor: Knatory
+Memory: 32 GB
+Price: 3200$
+InStock: False
+Company: Griva
+LimitedEditons: False
+Date: 09.12.2022 20:38:11

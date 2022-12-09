@@ -29,42 +29,52 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.ColorSelect = new System.Windows.Forms.ComboBox();
+            this.processorSelect = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel14 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.companySelect = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.inStock = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.changeModelButton = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.limitedEditionCheck = new System.Windows.Forms.CheckBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.ViewModelsButton = new System.Windows.Forms.Button();
+            this.deleteModelButton = new System.Windows.Forms.Button();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.comboBoxChangeModel = new System.Windows.Forms.ComboBox();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.comboBoxDeleteModel = new System.Windows.Forms.ComboBox();
             this.panel8.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel12.SuspendLayout();
@@ -73,36 +83,44 @@
             this.panel16.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel9.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.panel11.SuspendLayout();
             this.panel13.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel18.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // saveButton
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(284, 431);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(243, 111);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Create new model";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveButton.Location = new System.Drawing.Point(540, 150);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(253, 111);
+            this.saveButton.TabIndex = 15;
+            this.saveButton.Text = "Create new model";
+            this.toolTip1.SetToolTip(this.saveButton, "Create a file with model info");
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel8.Controls.Add(this.panel10);
             this.panel8.Controls.Add(this.label5);
-            this.panel8.Location = new System.Drawing.Point(6, 297);
+            this.panel8.Location = new System.Drawing.Point(6, 283);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(253, 111);
             this.panel8.TabIndex = 17;
@@ -110,19 +128,19 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel10.Controls.Add(this.ColorSelect);
+            this.panel10.Controls.Add(this.processorSelect);
             this.panel10.Location = new System.Drawing.Point(10, 33);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(231, 59);
             this.panel10.TabIndex = 3;
             // 
-            // ColorSelect
+            // processorSelect
             // 
-            this.ColorSelect.DisplayMember = "adwa";
-            this.ColorSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ColorSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ColorSelect.FormattingEnabled = true;
-            this.ColorSelect.Items.AddRange(new object[] {
+            this.processorSelect.DisplayMember = "adwa";
+            this.processorSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.processorSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.processorSelect.FormattingEnabled = true;
+            this.processorSelect.Items.AddRange(new object[] {
             "Aboba",
             "Kwantory",
             "Exenos",
@@ -131,11 +149,11 @@
             "MixFight",
             "Rocky",
             "Delta\""});
-            this.ColorSelect.Location = new System.Drawing.Point(11, 13);
-            this.ColorSelect.MaxDropDownItems = 3;
-            this.ColorSelect.Name = "ColorSelect";
-            this.ColorSelect.Size = new System.Drawing.Size(209, 33);
-            this.ColorSelect.TabIndex = 1;
+            this.processorSelect.Location = new System.Drawing.Point(11, 13);
+            this.processorSelect.MaxDropDownItems = 3;
+            this.processorSelect.Name = "processorSelect";
+            this.processorSelect.Size = new System.Drawing.Size(209, 33);
+            this.processorSelect.TabIndex = 1;
             // 
             // label5
             // 
@@ -152,27 +170,27 @@
             this.panel12.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel12.Controls.Add(this.panel14);
             this.panel12.Controls.Add(this.label12);
-            this.panel12.Location = new System.Drawing.Point(6, 431);
+            this.panel12.Location = new System.Drawing.Point(540, 21);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(253, 111);
+            this.panel12.Size = new System.Drawing.Size(253, 112);
             this.panel12.TabIndex = 17;
             // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel14.Controls.Add(this.comboBox1);
+            this.panel14.Controls.Add(this.companySelect);
             this.panel14.Location = new System.Drawing.Point(10, 33);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(231, 59);
+            this.panel14.Size = new System.Drawing.Size(231, 60);
             this.panel14.TabIndex = 3;
             // 
-            // comboBox1
+            // companySelect
             // 
-            this.comboBox1.DisplayMember = "adwa";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.companySelect.DisplayMember = "adwa";
+            this.companySelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.companySelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.companySelect.FormattingEnabled = true;
+            this.companySelect.Items.AddRange(new object[] {
             "The Rock",
             "Cubix",
             "ElectroHeart",
@@ -181,11 +199,11 @@
             "Xiaomi",
             "Apple",
             "Samsung"});
-            this.comboBox1.Location = new System.Drawing.Point(9, 12);
-            this.comboBox1.MaxDropDownItems = 3;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(209, 33);
-            this.comboBox1.TabIndex = 2;
+            this.companySelect.Location = new System.Drawing.Point(9, 13);
+            this.companySelect.MaxDropDownItems = 3;
+            this.companySelect.Name = "companySelect";
+            this.companySelect.Size = new System.Drawing.Size(209, 33);
+            this.companySelect.TabIndex = 2;
             // 
             // label12
             // 
@@ -202,7 +220,7 @@
             this.panel15.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel15.Controls.Add(this.panel16);
             this.panel15.Controls.Add(this.label13);
-            this.panel15.Location = new System.Drawing.Point(5, 559);
+            this.panel15.Location = new System.Drawing.Point(809, 22);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(253, 111);
             this.panel15.TabIndex = 17;
@@ -210,26 +228,24 @@
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel16.Controls.Add(this.comboBox2);
+            this.panel16.Controls.Add(this.inStock);
             this.panel16.Location = new System.Drawing.Point(10, 33);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(231, 59);
+            this.panel16.Size = new System.Drawing.Size(231, 58);
             this.panel16.TabIndex = 3;
             // 
-            // comboBox2
+            // inStock
             // 
-            this.comboBox2.DisplayMember = "adwa";
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.inStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.inStock.FormattingEnabled = true;
+            this.inStock.ItemHeight = 25;
+            this.inStock.Items.AddRange(new object[] {
             "Yes",
             "No"});
-            this.comboBox2.Location = new System.Drawing.Point(9, 13);
-            this.comboBox2.MaxDropDownItems = 3;
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(209, 33);
-            this.comboBox2.TabIndex = 3;
+            this.inStock.Location = new System.Drawing.Point(14, 0);
+            this.inStock.Name = "inStock";
+            this.inStock.Size = new System.Drawing.Size(203, 54);
+            this.inStock.TabIndex = 0;
             // 
             // label13
             // 
@@ -241,15 +257,17 @@
             this.label13.TabIndex = 2;
             this.label13.Text = "In stoke?";
             // 
-            // button2
+            // changeModelButton
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(284, 559);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(244, 111);
-            this.button2.TabIndex = 19;
-            this.button2.Text = "Change existing model";
-            this.button2.UseVisualStyleBackColor = true;
+            this.changeModelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.changeModelButton.Location = new System.Drawing.Point(8, 41);
+            this.changeModelButton.Name = "changeModelButton";
+            this.changeModelButton.Size = new System.Drawing.Size(253, 67);
+            this.changeModelButton.TabIndex = 19;
+            this.changeModelButton.Text = "Change model";
+            this.toolTip1.SetToolTip(this.changeModelButton, "Change model");
+            this.changeModelButton.UseVisualStyleBackColor = true;
+            this.changeModelButton.Click += new System.EventHandler(this.ChangeModelButton_Click);
             // 
             // panel6
             // 
@@ -264,21 +282,27 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel7.Controls.Add(this.textBox3);
+            this.panel7.Controls.Add(this.trackBar2);
+            this.panel7.Controls.Add(this.numericUpDown2);
             this.panel7.Location = new System.Drawing.Point(10, 33);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(231, 59);
             this.panel7.TabIndex = 3;
             // 
-            // textBox3
+            // trackBar2
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(15, 14);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(200, 32);
-            this.textBox3.TabIndex = 0;
-            this.textBox3.Enter += new System.EventHandler(this.textBox3_Enter);
-            this.textBox3.Leave += new System.EventHandler(this.textBox3_Leave);
+            this.trackBar2.Location = new System.Drawing.Point(83, 8);
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(142, 45);
+            this.trackBar2.TabIndex = 3;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown2.Location = new System.Drawing.Point(3, 14);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(76, 32);
+            this.numericUpDown2.TabIndex = 2;
             // 
             // label3
             // 
@@ -303,11 +327,32 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panel4.Controls.Add(this.trackBar1);
             this.panel4.Controls.Add(this.numericUpDown1);
             this.panel4.Location = new System.Drawing.Point(10, 33);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(231, 59);
             this.panel4.TabIndex = 3;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(83, 8);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(142, 45);
+            this.trackBar1.TabIndex = 1;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown1.Location = new System.Drawing.Point(3, 14);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(76, 32);
+            this.numericUpDown1.TabIndex = 0;
             // 
             // label4
             // 
@@ -332,21 +377,27 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.trackBar3);
+            this.panel2.Controls.Add(this.numericUpDown3);
             this.panel2.Location = new System.Drawing.Point(10, 33);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(231, 59);
             this.panel2.TabIndex = 3;
             // 
-            // textBox2
+            // trackBar3
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(15, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 32);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Enter += new System.EventHandler(this.textBox2_Enter);
-            this.textBox2.Leave += new System.EventHandler(this.textBox2_Leave);
+            this.trackBar3.Location = new System.Drawing.Point(83, 7);
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(142, 45);
+            this.trackBar3.TabIndex = 5;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.numericUpDown3.Location = new System.Drawing.Point(3, 13);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(76, 32);
+            this.numericUpDown3.TabIndex = 4;
             // 
             // label1
             // 
@@ -410,31 +461,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // numericUpDown1
+            // limitedEditionCheck
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown1.Location = new System.Drawing.Point(15, 14);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(200, 32);
-            this.numericUpDown1.TabIndex = 0;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.checkBox1.Location = new System.Drawing.Point(15, 16);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(165, 30);
-            this.checkBox1.TabIndex = 21;
-            this.checkBox1.Text = "limited edition";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.limitedEditionCheck.AutoSize = true;
+            this.limitedEditionCheck.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.limitedEditionCheck.Location = new System.Drawing.Point(15, 16);
+            this.limitedEditionCheck.Name = "limitedEditionCheck";
+            this.limitedEditionCheck.Size = new System.Drawing.Size(165, 30);
+            this.limitedEditionCheck.TabIndex = 21;
+            this.limitedEditionCheck.Text = "limited edition";
+            this.limitedEditionCheck.UseVisualStyleBackColor = true;
             // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.panel11.Controls.Add(this.panel13);
             this.panel11.Controls.Add(this.label6);
-            this.panel11.Location = new System.Drawing.Point(274, 297);
+            this.panel11.Location = new System.Drawing.Point(274, 283);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(253, 111);
             this.panel11.TabIndex = 18;
@@ -442,7 +485,7 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel13.Controls.Add(this.checkBox1);
+            this.panel13.Controls.Add(this.limitedEditionCheck);
             this.panel13.Location = new System.Drawing.Point(10, 33);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(231, 59);
@@ -452,24 +495,90 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(6, 9);
+            this.label6.Location = new System.Drawing.Point(1, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(205, 18);
+            this.label6.Size = new System.Drawing.Size(256, 18);
             this.label6.TabIndex = 2;
-            this.label6.Text = "Choose processor model:";
+            this.label6.Text = "Check the box for limited edition:";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            // 
+            // ViewModelsButton
+            // 
+            this.ViewModelsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ViewModelsButton.Location = new System.Drawing.Point(539, 283);
+            this.ViewModelsButton.Name = "ViewModelsButton";
+            this.ViewModelsButton.Size = new System.Drawing.Size(254, 111);
+            this.ViewModelsButton.TabIndex = 21;
+            this.ViewModelsButton.Text = "View models";
+            this.toolTip1.SetToolTip(this.ViewModelsButton, "View models info");
+            this.ViewModelsButton.UseVisualStyleBackColor = true;
+            this.ViewModelsButton.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // deleteModelButton
+            // 
+            this.deleteModelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteModelButton.Location = new System.Drawing.Point(8, 41);
+            this.deleteModelButton.Name = "deleteModelButton";
+            this.deleteModelButton.Size = new System.Drawing.Size(253, 67);
+            this.deleteModelButton.TabIndex = 19;
+            this.deleteModelButton.Text = "Delete model";
+            this.toolTip1.SetToolTip(this.deleteModelButton, "Change model");
+            this.deleteModelButton.UseVisualStyleBackColor = true;
+            this.deleteModelButton.Click += new System.EventHandler(this.DeleteModelButton_Click);
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.comboBoxChangeModel);
+            this.panel17.Controls.Add(this.changeModelButton);
+            this.panel17.Location = new System.Drawing.Point(799, 150);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(269, 111);
+            this.panel17.TabIndex = 22;
+            // 
+            // comboBoxChangeModel
+            // 
+            this.comboBoxChangeModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxChangeModel.FormattingEnabled = true;
+            this.comboBoxChangeModel.Location = new System.Drawing.Point(25, 2);
+            this.comboBoxChangeModel.Name = "comboBoxChangeModel";
+            this.comboBoxChangeModel.Size = new System.Drawing.Size(220, 33);
+            this.comboBoxChangeModel.TabIndex = 20;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.comboBoxDeleteModel);
+            this.panel18.Controls.Add(this.deleteModelButton);
+            this.panel18.Location = new System.Drawing.Point(799, 283);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(269, 111);
+            this.panel18.TabIndex = 23;
+            // 
+            // comboBoxDeleteModel
+            // 
+            this.comboBoxDeleteModel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.comboBoxDeleteModel.FormattingEnabled = true;
+            this.comboBoxDeleteModel.Location = new System.Drawing.Point(25, 2);
+            this.comboBoxDeleteModel.Name = "comboBoxDeleteModel";
+            this.comboBoxDeleteModel.Size = new System.Drawing.Size(220, 33);
+            this.comboBoxDeleteModel.TabIndex = 20;
             // 
             // ModelsCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 682);
+            this.ClientSize = new System.Drawing.Size(1089, 409);
+            this.Controls.Add(this.panel18);
+            this.Controls.Add(this.panel17);
+            this.Controls.Add(this.ViewModelsButton);
             this.Controls.Add(this.panel11);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel15);
             this.Controls.Add(this.panel12);
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.saveButton);
             this.Name = "ModelsCreator";
             this.Text = "ModelsCreator";
             this.panel8.ResumeLayout(false);
@@ -485,33 +594,41 @@
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.panel13.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel18.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.ComboBox ColorSelect;
+        private System.Windows.Forms.ComboBox processorSelect;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.Panel panel14;
@@ -520,19 +637,16 @@
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox companySelect;
+        private System.Windows.Forms.Button changeModelButton;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel9;
@@ -540,9 +654,22 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox limitedEditionCheck;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.ListBox inStock;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.TrackBar trackBar3;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button ViewModelsButton;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.ComboBox comboBoxChangeModel;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.ComboBox comboBoxDeleteModel;
+        private System.Windows.Forms.Button deleteModelButton;
     }
 }
