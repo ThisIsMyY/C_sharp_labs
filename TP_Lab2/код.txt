@@ -19,24 +19,34 @@ namespace TP_Lab2_b
         {
             Console.WriteLine("The group has " + subjectsNumber + " subjects");
         }
-        static void ShowStudentGrades(int student_id, int subjectsNumber, string[] subjects, int[,,] notes, int notesNumber)
+        static void ShowStudentGrades(int student_id, int subjectsNumber, string[] subjects, int[][][] notes)
         {
             for (int subject = 0; subject < subjectsNumber; subject++)
             {
                 Console.WriteLine();
                 Console.Write(subjects[subject] + ":  ");
-                for (int note = 0; note < notesNumber; note++)
+                for (int note = 0; note < notes[student_id][subject].Length; note++)
                 {
-                    Console.Write(notes[student_id, subject, note] + "  ");
+                    Console.Write(notes[student_id][subject][note] + "  ");
                 }
             }
         }
-        static void TotalGradesNumber(int[,,] notes)
+        static void TotalGradesNumber(int[][][] notes, int studentsNumber, int subjectsNumber)
         {
-            int totalNotesNumber = notes.Length;
+            int totalNotesNumber = 0;
+            for(int i = 0; i < studentsNumber; i++)
+            {
+                for(int j = 0; j < subjectsNumber; j++)
+                {
+                    for(int n = 0; n < notes[i][j].Length; n++)
+                    {
+                        totalNotesNumber++;
+                    }
+                }
+            }
             Console.WriteLine("Total number of grades: " + totalNotesNumber);
         }
-        static void StudentWithTheHighestScore(string[] students, string[] subjects, int[,,] notes, int notesNumber)
+        static void StudentWithTheHighestScore(string[] students, string[] subjects, int[][][] notes)
         {
             int maxScore = 0;
             int studentIndex = 0;
@@ -45,9 +55,9 @@ namespace TP_Lab2_b
                 int score = 0;
                 for(int subject = 0; subject < subjects.Length; subject++)
                 {
-                    for(int note = 0; note < notesNumber; note++)
+                    for(int note = 0; note < notes[student][subject].Length; note++)
                     {
-                        score += notes[student,subject,note];
+                        score += notes[student][subject][note];
                     }
                 }
                 if(score > maxScore)
@@ -59,7 +69,7 @@ namespace TP_Lab2_b
             Console.WriteLine("Student with the highest score is: " + students[studentIndex] + $"[{studentIndex}]");
             Console.WriteLine("Score is " + maxScore);
         }
-        static void StudentWithTheLowestScore(string[] students, string[] subjects, int[,,] notes, int notesNumber)
+        static void StudentWithTheLowestScore(string[] students, string[] subjects, int[][][] notes)
         {
             int minScore = 99999999;
             int studentIndex = 0;
@@ -68,9 +78,9 @@ namespace TP_Lab2_b
                 int score = 0;
                 for (int subject = 0; subject < subjects.Length; subject++)
                 {
-                    for (int note = 0; note < notesNumber; note++)
+                    for (int note = 0; note < notes[student][subject].Length; note++)
                     {
-                        score += notes[student, subject, note];
+                        score += notes[student][subject][note];
                     }
                 }
                 if (score < minScore)
@@ -82,7 +92,7 @@ namespace TP_Lab2_b
             Console.WriteLine("Student with the lowest score is: " + students[studentIndex] + $"[{studentIndex}]");
             Console.WriteLine("Score is " + minScore);
         }
-        static void AmountOfEachGrade(int[,,] notes, int studentsNumber, int subjectsNumber, int notesNumber, Random random)
+        static void AmountOfEachGrade(int[][][] notes, int studentsNumber, int subjectsNumber, Random random)
         {
             int grade_2 = 0;
             int grade_3 = 0;
@@ -98,9 +108,9 @@ namespace TP_Lab2_b
             {
                 for (int subj = 0; subj < subjectsNumber; subj++)
                 {
-                    for (int n = 0; n < notesNumber; n++)
+                    for (int n = 0; n < notes[stud][subj].Length; n++)
                     {
-                        switch(notes[stud, subj, n])
+                        switch(notes[stud][subj][n])
                         {
                             case 2:
                                 grade_2++;
@@ -163,23 +173,25 @@ namespace TP_Lab2_b
             }
 
             Random random = new Random();
-            int notesNumber = random.Next(5, 10);
-            Console.WriteLine(notesNumber);
 
-            int[,,] notes = new int[studentsNumber, subjectsNumber, notesNumber];
+            int[][][] notes = new int[studentsNumber][][];
 
             for (int stud = 0; stud < studentsNumber; stud++)
             {
+                notes[stud] = new int[5][];
                 for (int subj = 0; subj < subjectsNumber; subj++)
                 {
+                    int notesNumber = random.Next(5, 11);
+                    notes[stud][subj] = new int[notesNumber];
+
                     for (int n = 0; n < notesNumber; n++)
                     {
-                        notes[stud, subj, n] = random.Next(2, 11);
+                        notes[stud][subj][n] = random.Next(2, 11);
                     }
                 }
             }
 
-            while(true)
+            while (true)
             {
                 Console.WriteLine("\n1. Show number of students. \n2. Show number of subjects. \n3. Show student grades. " +
                     "\n4. Student with the highest score. \n5. Student with the lowest score. \n6.Total grades number. \n7. Amount of each grade.");
@@ -202,20 +214,20 @@ namespace TP_Lab2_b
                         }
                         Console.Write("\n\nEnter student number: ");
                         int student_id = int.Parse(Console.ReadLine());
-                        ShowStudentGrades(student_id, subjectsNumber, subjects, notes, notesNumber);
+                        ShowStudentGrades(student_id, subjectsNumber, subjects, notes);
                         break;
                     case "4":
-                        StudentWithTheHighestScore(students, subjects, notes, notesNumber);
+                        StudentWithTheHighestScore(students, subjects, notes);
                         break;
                     case "5":
-                        StudentWithTheLowestScore(students, subjects, notes, notesNumber); ;
+                        StudentWithTheLowestScore(students, subjects, notes); ;
                         break;
                     case "6":
-                        TotalGradesNumber(notes);
+                        TotalGradesNumber(notes, studentsNumber, subjectsNumber);
                         break;
 
                     case "7":
-                        AmountOfEachGrade(notes, studentsNumber, subjectsNumber, notesNumber, random);
+                        AmountOfEachGrade(notes, studentsNumber, subjectsNumber, random);
                         break;
 
                     default:

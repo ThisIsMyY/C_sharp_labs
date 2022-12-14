@@ -1,0 +1,9 @@
+Name: Фдуч
+Display: 16 inches
+Processor: Kwantory
+Memory: 32 GB
+Price: 2000 $
+InStock: False
+Company: ElectroHeart
+LimitedEditons: False
+Date: 10.12.2022 17:40:00

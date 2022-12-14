@@ -5,55 +5,53 @@ namespace TP_lab3
 {
     internal class MyString
     {
-        private string result = "";
+        private char[] result;
         private int length = 0;
-        public string Result { get { return result; } set { result = value; } }
-        public int Length { get { return length; } set { length = value; } }
+        public string Result { get => new string(result); }
+        public int Length { get => result.Length; }
 
         //funtion-indexator
-        public char this[int index] { get { return this[index]; } }
+        //public char this[int index] { get { return this[index]; } }
 
 
         //Constructors
         public MyString(char ch, int repeatNumber)
         {
+            result = new char[repeatNumber];
             for(int i = 0; i < repeatNumber; i++)
             {
-                result += ch;
+                result[i] = ch;
                 length++;
             }
         }
         public MyString(char[] chArr)
         {
-            foreach (char ch in chArr)
+            result = new char[chArr.Length];
+            for (int ch = 0; ch < chArr.Length; ch++)
             {
-                result += ch;
+                result[ch] = chArr[ch];
                 length++;
             }
         }
         public MyString(char[] chArr, int startIndex, int endIndex)
         {
-            for(int i = startIndex; i < endIndex; i++)
+            result = new char[endIndex - startIndex + 1];
+            for (int i = startIndex; i < endIndex; i++)
             {
-                result += chArr[i];
+                result[i] = chArr[i];
                 length++;
             }
         }
-        public MyString(string str1, string str2)
+        public MyString(char[] str1, char[] str2)
         {
-            result = str1 + str2;
-            foreach (char c in result)
+            result = new char[str1.Length + str2.Length];
+            for (int i = 0; i < str1.Length; i++)
             {
-                length++;
+                result[i] = str1[i];
             }
-        }
-
-        public MyString(string str)
-        {
-            result = str;
-            foreach (char c in result)
+            for (int ch = str1.Length, i = 0; i < str2.Length; i++, ch++)
             {
-                length++;
+                result[ch] = str2[i];
             }
         }
 
@@ -67,31 +65,51 @@ namespace TP_lab3
         //methods
 
         //string joining
-        public static string Join(string separator, string[] array)
+        public static char[] Join(char[] separator, char[][] array)
         {
-            string separatedArray = "";
+            List<char> separatedArray = new List<char>();
             if(array.Length > 1)
             {
-                for (int s = 0; s < array.Length - 1; s++)
+                int ch = 0;
+                for (int s = 0; s < array.GetLength(0) - 1; s++)
                 {
-                    separatedArray += array[s] + separator;
+                    for(int arrCh = 0; arrCh < array[s].Length; arrCh++, ch++)
+                    {
+                        separatedArray.Add(array[s][arrCh]);
+                    }
+
+                    for (int sep = 0; sep < separator.Length; sep++)
+                    {
+                        separatedArray.Add(separator[sep]);
+                    }
+                }
+                for (int arrCh = 0; ch < array[array.GetLength(0) - 1].Length; arrCh++, ch++)
+                {
+                    separatedArray[ch] = array[array.GetLength(0) - 1][arrCh];
                 }
             }
-            separatedArray += array[array.Length - 1];
-            return separatedArray;
+            return separatedArray.ToArray();
         }
-        public static string Join(char separator, string[] array)
+        public static char[] Join(char separator, char[][] array)
         {
-            string separatedArray = "";
+            List<char> separatedArray = new List<char>();
             if (array.Length > 1)
             {
-                for (int s = 0; s < array.Length - 1; s++)
+                int ch = 0;
+                for (int s = 0; s < array.GetLength(0) - 1; s++)
                 {
-                    separatedArray += array[s] + separator;
+                    for (int arrCh = 0; arrCh < array[s].Length; arrCh++, ch++)
+                    {
+                        separatedArray.Add(array[s][arrCh]);
+                    }
+                    separatedArray.Add(separator);
+                }
+                for (int arrCh = 0; ch < array[array.GetLength(0) - 1].Length; arrCh++, ch++)
+                {
+                    separatedArray.Add(array[array.GetLength(0) - 1][arrCh]);
                 }
             }
-            separatedArray += array[array.Length - 1];
-            return separatedArray;
+            return separatedArray.ToArray();
         }
 
         //Spaces counter
@@ -109,17 +127,17 @@ namespace TP_lab3
         }
 
         //check for equality
-        public bool Equals(string value)
+        public bool Equals(char[] value)
         {
-            if (result == value)
+            if (result.ToString() == value.ToString())
             {
                 return true;
             }
             else return false;
         }
-        public static bool Equals(string value1, string value2)
+        public static bool Equals(char[] value1, char[] value2)
         {
-            if (value1 == value2)
+            if (value1.ToString() == value2.ToString())
             {
                 return true;
             }
@@ -127,28 +145,31 @@ namespace TP_lab3
         }
 
         //Concat
-        public static string Concat(params string[] values)
+        public static char[] Concat(params char[][] values)
         {
-            string concatString = "";
-            foreach(string str in values)
+            List<char> concatString = new List<char>();
+            for(int i = 0; i < values.GetLength(0); i++)
             {
-                concatString += str;
+                for(int j = 0; j < values[i].Length; j++)
+                {
+                    concatString.Add(values[i][j]);
+                }
             }
-            return concatString;
+            return concatString.ToArray();
         }
 
         //Contains
-        public bool Contains(string value)
+        public bool Contains(char[] value)
         {
-            string substring = "";
+            char[] substring = new char[value.Length];
             for (int i = 0; i < length; i++)
             {
                 if (i <= value.Length - 1)
                 {
                     if (result[i] == value[i])
                     {
-                        substring += value[i];
-                        if (substring == value)
+                        substring[i] = value[i];
+                        if (substring.ToString() == value.ToString())
                         {
                             return true;
                         }
@@ -160,7 +181,7 @@ namespace TP_lab3
         }
 
         //StartsWith
-        public bool StartsWith(string value)
+        public bool StartsWith(char[] value)
         {
             if(length < value.Length)
             {
@@ -180,7 +201,7 @@ namespace TP_lab3
         }
 
         //EndsWith
-        public bool EndsWith(string value)
+        public bool EndsWith(char[] value)
         {
             if (length < value.Length)
             {
@@ -212,7 +233,7 @@ namespace TP_lab3
             }
             return -1;
         }
-        public int IndexOf(string value)
+        public int IndexOf(char[] value)
         {
             int index = -1;
             int count = 0;
@@ -256,7 +277,7 @@ namespace TP_lab3
             }
             return -1;
         }
-        public int LastIndexOf(string value)
+        public int LastIndexOf(char[] value)
         {
             int index = -1;
             int count = 0;
@@ -289,83 +310,33 @@ namespace TP_lab3
         }
 
         //Split
-        public string[] Split(char separator)
+        public char[][] Split(char separator)
         {
-            string substring = "";
+            List<char> substring = new List<char>();
+            List<char[]> substringsList = new List<char[]>();
             int index = 0;
-            List<string> substringsList = new List<string>();
+
             for (int ch = 0; ch < length; ch++)
             {
                 if (ch == length - 1)
                 {
-                    if (substring != "")
+                    if (substring.Count > 0)
                     {
-                        substring += result[ch];
-                        substringsList.Add(substring);
-                        substring = "";
+                        substring.Add(result[ch]);
+                        substringsList.Add(substring.ToArray());
+                        substring.Clear();
                     }
                 }
                 else if (result[ch] != separator)
                 {
-                    substring += result[ch];
+                    substring.Add(result[ch]);
                 }
                 else
                 {
-                    if (substring != "")
+                    if (substring.Count > 0)
                     {
-                        substringsList.Add(substring);
-                        substring = "";
-                        index++;
-                    }
-                }
-            }
-            return substringsList.ToArray();
-        }
-
-        public string[] Split(params char[] separators)
-        {
-            string substring = "";
-            int index = 0;
-            bool isSeparator = false;
-            List<string> substringsList = new List<string>();
-            for (int ch = 0; ch < length; ch++)
-            {
-                if (ch == length - 1)
-                {
-                    if (substring != "")
-                    {
-                        substring += result[ch];
-                        substringsList.Add(substring);
-                        substring = "";
-                    }
-                }
-                else
-                {
-                    int i = 0;
-                    while(i < separators.Length)
-                    {
-                        if(result[ch] == separators[i])
-                        {
-                            isSeparator = true;
-                            break;
-                        }
-                        else
-                        {
-                            isSeparator = false;
-                        }
-                        i++;
-                    }
-                    if(isSeparator == false)
-                    {
-                        substring += result[ch];
-                    }
-                }
-                if(isSeparator == true)
-                {
-                    if (substring != "")
-                    {
-                        substringsList.Add(substring);
-                        substring = "";
+                        substringsList.Add(substring.ToArray());
+                        substring.Clear();
                         index++;
                     }
                 }
@@ -374,12 +345,13 @@ namespace TP_lab3
         }
 
         //Trim
-        public string Trim()
+        public char[] Trim()
         {
             int? startIndex = null;
             int? endIndex = null;
-            string str = "";
-            for(int ch = 0; ch < length; ch++)
+            List<char> str = new List<char>();
+
+            for (int ch = 0; ch < length; ch++)
             {
                 if(startIndex == null)
                 {
@@ -400,15 +372,15 @@ namespace TP_lab3
             {
                 for (int index = (int)startIndex; index <= endIndex; index++)
                 {
-                    str += result[index];
+                    str.Add(result[index]);
                 }
             }
-            return str;
+            return str.ToArray();
         }
 
-        public string Trim(params char[] trimChars)
+        public char[] Trim(params char[] trimChars)
         {
-            string str = "";
+            List<char> str = new List<char>();
             for (int ch = 0; ch < length; ch++)
             {
                 bool isTrimChar = false;
@@ -422,100 +394,131 @@ namespace TP_lab3
                 }
                 if (isTrimChar == false)
                 {
-                    str += result[ch];
+                    str.Add(result[ch]);
                 }
             }
-            return str;
+            return str.ToArray();
         }
 
         //PadLeft
-        public string PadLeft(int totalWidth)
+        public char[] PadLeft(int totalWidth)
         {
-            string spaces = "";
+            List<char> spaces = new List<char>();
+
             for(int i = 0; i < totalWidth; i++)
             {
-                spaces += ' ';
+                spaces.Add(' ');
             }
-            return spaces + result;
+            for(int i = 0; i < length; i++)
+            {
+                spaces.Add(result[i]);
+            }
+            return spaces.ToArray();
         }
 
-        public string PadLeft(int totalWidth, char paddingChar)
+        public char[] PadLeft(int totalWidth, char paddingChar)
         {
-            string paddingChars = "";
+            List<char> spaces = new List<char>();
+
             for (int i = 0; i < totalWidth; i++)
             {
-                paddingChars += paddingChar;
+                spaces.Add(paddingChar);
             }
-            return paddingChars + result;
+            for (int i = 0; i < length; i++)
+            {
+                spaces.Add(result[i]);
+            }
+            return spaces.ToArray();
         }
 
         //PadRight
-        public string PadRight(int totalWidth)
+        public char[] PadRight(int totalWidth)
         {
-            string spaces = "";
+            List<char> spaces = new List<char>();
+
+            for (int i = 0; i < length; i++)
+            {
+                spaces.Add(result[i]);
+            }
             for (int i = 0; i < totalWidth; i++)
             {
-                spaces += ' ';
+                spaces.Add(' ');
             }
-            return result + spaces;
+            return spaces.ToArray();
         }
 
-        public string PadRight(int totalWidth, char paddingChar)
+        public char[] PadRight(int totalWidth, char paddingChar)
         {
-            string paddingChars = "";
+            List<char> spaces = new List<char>();
+
+            for (int i = 0; i < length; i++)
+            {
+                spaces.Add(result[i]);
+            }
             for (int i = 0; i < totalWidth; i++)
             {
-                paddingChars += paddingChar;
+                spaces.Add(paddingChar);
             }
-            return result + paddingChars;
+            return spaces.ToArray();
         }
 
         //Insert
-        public string Insert(int startIndex, string value)
+        public char[] Insert(int startIndex, char[] value)
         {
-            string str = "";
+            char[] str = new char[length + value.Length];
             if(startIndex == length)
             {
-               return result + value;
+                for(int i = 0; i < length; i++)
+                {
+                    str[i] = result[i];
+                }
+                for (int i = length, ch = 0; i < str.Length; i++, ch++)
+                {
+                    str[i] = value[ch];
+                }
+                return str;
             }
             for(int ch = 0; ch < length; ch++)
             {
                 if(ch != startIndex)
                 {
-                    str += result[ch];
+                    str[ch] = result[ch];
                 }
                 else
                 {
-                    str += value;
-                    str += result[ch];
+                    for (int i = 0; i < value.Length; i++)
+                    {
+                        str[ch] = value[i];
+                    }
+                    str[ch] = result[ch];
                 }
             }
             return str;
         }
 
         //Remove
-        public string Remove(int startIndex)
+        public char[] Remove(int startIndex)
         {
-            string str = "";
+            List<char> str = new List<char>();
             for(int ch = 0; ch < startIndex; ch++)
             {
-                str += result[ch];
+                str.Add(result[ch]);
             }
-            return str;
+            return str.ToArray();
         }
 
-        public string Remove(int startIndex, int count)
+        public char[] Remove(int startIndex, int count)
         {
-            string str = "";
+            List<char> str = new List<char>();
             for (int ch = 0; ch < startIndex; ch++)
             {
-                str += result[ch];
+                str.Add(result[ch]);
             }
             for (int ch = startIndex+3; ch < length; ch++)
             {
-                str += result[ch];
+                str.Add(result[ch]);
             }
-            return str;
+            return str.ToArray();
         }
     }
 }
