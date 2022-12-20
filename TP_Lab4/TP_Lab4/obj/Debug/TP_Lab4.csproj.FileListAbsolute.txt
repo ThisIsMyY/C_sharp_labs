@@ -1,0 +1,8 @@
+E:\C_sharp_labs\TP_Lab4\TP_Lab4\bin\Debug\TP_Lab4.exe.config
+E:\C_sharp_labs\TP_Lab4\TP_Lab4\bin\Debug\TP_Lab4.exe
+E:\C_sharp_labs\TP_Lab4\TP_Lab4\bin\Debug\TP_Lab4.pdb
+E:\C_sharp_labs\TP_Lab4\TP_Lab4\obj\Debug\TP_Lab4.csproj.AssemblyReference.cache
+E:\C_sharp_labs\TP_Lab4\TP_Lab4\obj\Debug\TP_Lab4.csproj.SuggestedBindingRedirects.cache
+E:\C_sharp_labs\TP_Lab4\TP_Lab4\obj\Debug\TP_Lab4.csproj.CoreCompileInputs.cache
+E:\C_sharp_labs\TP_Lab4\TP_Lab4\obj\Debug\TP_Lab4.exe
+E:\C_sharp_labs\TP_Lab4\TP_Lab4\obj\Debug\TP_Lab4.pdb
