@@ -198,7 +198,7 @@ namespace TP_Lab2_a
                 NumarRational detX1 = (n1 * b2 - b1 * n2) / mainDet;
                 NumarRational detX2 = (a1 * n2 - n1 * a2) / mainDet;
 
-                Console.WriteLine("\n-----------------------");
+                Console.WriteLine("\n\nVariables value:-----------------------\n");
                 Console.WriteLine("x1 = " + Math.Round(detX1.NumValue, 3));
                 Console.WriteLine("x2 = " + Math.Round(detX2.NumValue, 3));
             }
@@ -248,7 +248,7 @@ namespace TP_Lab2_a
                 detX3 = detX3 + n1 * (a2 * b3 - b2 * a3);
 
 
-                Console.WriteLine("\n-----------------------");
+                Console.WriteLine("\n\nVariables value:-----------------------\n");
                 Console.WriteLine("x1 = " + detX1.NumValue);
                 Console.WriteLine("x2 = " + detX2.NumValue);
                 Console.WriteLine("x3 = " + detX3.NumValue);
@@ -257,7 +257,17 @@ namespace TP_Lab2_a
 
         static void Main(string[] args)
         {
-            SystemCreatingAndCalculation();
+            while (true)
+            {
+                SystemCreatingAndCalculation();
+                Console.Write("\nAgain? (Yes = 1, No = 0) ");
+                if (Console.ReadLine() != "1")
+                {
+                    Console.WriteLine("Good bye!");
+                    break;
+                }
+                else Console.Clear();
+            }
 
             Console.ReadLine();
         }
